@@ -1,34 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useContext, useState } from 'react'
+// import Intro from './components/intro/intro'
+// import About from './components/about/About'
+// import ProductList from './components/productList/ProductList'
+// import Contact from './components/contact/Contact'
+import Toggle from './components/toggle/Toggle'
+import { ThemeContext } from './context'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+ const theme = useContext(ThemeContext)
+ const darkMode= theme.state.darkMode;
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div style={{backgroundColor: darkMode? "#222": "white", color: darkMode && "white"}}>
+     <Toggle/>
+    </div>
   )
 }
 
