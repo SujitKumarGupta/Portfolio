@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-// import Intro from './components/intro/intro'
+import Intro from './components/intro/Intro.jsx'
 // import About from './components/about/About'
 // import ProductList from './components/productList/ProductList'
 // import Contact from './components/contact/Contact'
@@ -12,6 +12,7 @@ function App() {
   return (
     <div style={{backgroundColor: darkMode? "#222": "white", color: darkMode && "white"}}>
      <Toggle/>
+     <Intro/>
     </div>
   )
 }
