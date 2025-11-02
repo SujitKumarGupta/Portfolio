@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import Intro from './components/intro/Intro.jsx'
 import About from './components/about/About'
 import ProductList from './components/productList/ProductList'
-// import Contact from './components/contact/Contact'
+import Contact from './components/contact/Contact.jsx'
 import Toggle from './components/toggle/Toggle'
 import { ThemeContext } from './context'
 
@@ -15,6 +15,7 @@ function App() {
      <Intro/>
      <About/>
      <ProductList/>
+     <Contact/>
     </div>
   )
 }

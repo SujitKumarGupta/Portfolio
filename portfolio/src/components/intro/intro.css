@@ -26,11 +26,13 @@
   justify-content: space-between;
 }
 .i-intro {
-  font-size: 30px;
+  /* Use clamp for smooth scaling across devices */
+  font-size: clamp(1rem, 1.2vw + 0.6rem, 1.6rem);
   font-weight: 300;
 }
 .i-name {
-  font-size: 60px;
+  font-size: clamp(1.6rem, 4vw, 3.5rem);
+  margin: 0.2rem 0;
 }
 .i-title {
   height: 50px;
@@ -71,7 +73,7 @@
 }
 .i-title-item {
   height: 50px;
-  font-size: 30px;
+  font-size: clamp(1rem, 1.4vw + 0.6rem, 1.6rem);
   font-weight: bold;
   color: #59b256;
   display: flex;
@@ -93,5 +95,65 @@
   top: 0;
   right: 0;
 } 
+
+/* Responsive adjustments for Intro section */
+@media (max-width: 1024px) {
+  .i {
+    height: auto;
+    padding: 40px 20px;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .i-left, .i-right {
+    flex: unset;
+    width: 100%;
+    position: relative;
+  }
+  .i-left-wrapper {
+    padding: 20px;
+    height: auto;
+  }
+  .i-img {
+    position: relative;
+    width: 70%;
+    height: auto;
+    max-width: 320px;
+    margin: 0 auto;
+    right: 0;
+    transform: none;
+  }
+}
+
+/* Ensure image sits above name on small screens and is a perfect circle */
+@media (max-width: 768px) {
+  .i { flex-direction: column; }
+  /* place the right column (image) before the left content */
+  .i-right { order: -1; width: 100%; display: flex; justify-content: center; }
+  .i-left { width: 100%; }
+  .i-img {
+    width: 180px;
+    height: 180px;
+    max-width: 180px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin: 0 0 12px 0;
+    border: 4px solid #fff; /* keep the white border for contrast */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+}
+
+@media (max-width: 480px) {
+  .i-left-wrapper { padding: 16px; }
+  .i-intro { font-size: clamp(0.95rem, 2vw, 1.25rem); }
+  .i-name { font-size: clamp(1.2rem, 6vw, 2rem); }
+  .i-title-item { font-size: clamp(0.9rem, 2vw, 1.1rem); }
+  .i-img { width: 140px; height: 140px; max-width: 140px; aspect-ratio:1/1; border-radius:50%; margin: 0 0 10px 0; }
+  .i-bg { display: none; }
+}
 
 

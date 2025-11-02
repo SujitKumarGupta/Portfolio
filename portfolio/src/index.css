@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Set a sensible base font size for rem calculations and use fluid defaults */
+html { font-size: 16px; }
+body { font-size: 1rem; }
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -31,7 +35,8 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  /* Fluid h1: grows on large screens, stays readable on small screens */
+  font-size: clamp(1.6rem, 2.8vw, 3.2rem);
   line-height: 1.1;
 }
 
@@ -65,4 +70,9 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* small layout tweak for narrow viewports */
+@media (max-width: 480px) {
+  body { padding: 0 8px; }
 }

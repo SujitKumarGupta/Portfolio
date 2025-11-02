@@ -1,0 +1,113 @@
+.c{
+    min-height: 100vh;
+    position: relative;
+    padding: 20px 0;
+}
+
+.c-bg{
+    width: 20px;
+    height: 100%;
+    background-color: #59b256;
+    position: absolute;
+}
+.c-wrapper{
+    display: flex;
+    padding: 50px;
+    gap: 40px;
+    align-items: flex-start;
+}
+.c-left{
+    flex: 1;
+}
+.c-right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.c-title{
+    font-size: clamp(1.6rem, 3.6vw, 3.6rem);
+    width: 80%;
+    margin: 0 0 12px 0;
+}
+.c-info-item{
+    display: flex;
+    align-items: center;
+    margin: 50px 0px;
+    font-weight:300;
+    width: 70%;
+}
+.c-icon{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+.c-desc{
+    font-weight: 200;
+}
+form{
+    margin-top: 20px;
+}
+
+input{
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin: 10px 0px;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+textarea{
+        width: 100%;
+        margin: 10px 0px;
+        font-size: 14px;
+        padding-left: 10px;
+}
+
+/* Responsive styles for contact component */
+@media (max-width: 1024px) {
+    .c-wrapper{ padding: 36px; gap: 28px; }
+    .c-title{ font-size: clamp(1.4rem, 3.8vw, 2.6rem); width: 100%; }
+    .c-info-item{ width: 100%; margin: 28px 0; }
+    input{ width: 70%; }
+}
+
+@media (max-width: 768px) {
+    .c-wrapper{ flex-direction: column; padding: 28px 16px; }
+    .c-left, .c-right{ width: 100%; }
+    .c-left{ order: 1; }
+    .c-right{ order: 2; align-items: stretch; }
+    .c-title{ text-align: left; }
+    .c-info-item{ margin: 18px 0; }
+    form{ width: 100%; }
+    input{ width: 100%; }
+    textarea{ width: 100%; }
+    .c-bg{ width: 12px; }
+}
+
+@media (max-width: 480px) {
+    .c-wrapper{ padding: 18px 12px; }
+    .c-title{ font-size: clamp(1.2rem, 5vw, 1.6rem); }
+    .c-info-item{ margin: 12px 0; font-size: 0.95rem; }
+    button{ padding: 10px 14px; width: auto; }
+}
+button{
+    border: none;
+    padding: 8px;
+    background-color: #59b256;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn{
+    border-radius: 8%;
+}
+
+.btn:hover{
+    background-color: rgb(60, 149, 60);
+    
+}

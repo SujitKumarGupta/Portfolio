@@ -1,6 +1,6 @@
 .p{
     width: 30%;
-    height: 40vh;
+    height: 36vh;
     margin: 20px 10px;
     border: 2px solid rgb(243, 242, 242);
     border-radius: 10px 10px 0px 0px;
@@ -41,20 +41,13 @@
   transform: scale(1.05);
 }
 
-.p-img-container{
-   transition: all 10s ease;
-}
-.p-img-container:hover{
-  transform: translateY(-100%);
-  transition: all 10s ease;
-}
 
 /* --- Title inside overlay --- */
 .p-title {
-  font-size: 20px;
+  font-size: clamp(0.95rem, 1.2vw + 0.6rem, 1.25rem);
   font-weight: 600;
   color: #59b256;
-  margin-bottom: 8px;
+  margin-top: 10px;
   text-transform: capitalize;
   letter-spacing: 0.5px;
   text-align: center;
@@ -63,7 +56,7 @@
 
 /* --- Description inside overlay --- */
 .p-desc {
-  font-size: 14px;
+  font-size: clamp(0.85rem, 0.9vw + 0.5rem, 1rem);
   font-weight: 400;
   color: #8c8b8b;
   line-height: 1.4;
@@ -84,4 +77,30 @@
 .p a {
   text-decoration: none;
   color: inherit;
+}
+
+/* Responsive rules for product cards */
+@media (max-width: 1024px) {
+  .p{
+    width: 48%;
+    height: 38vh;
+    margin: 10px 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .p{
+    width: 100%;
+    height: auto;
+    margin: 12px 0;
+  }
+  .p-img{ height: 260px; }
+  .p-title{ font-size: clamp(0.95rem, 1.4vw, 1.1rem); }
+  .p-desc{ font-size: clamp(0.85rem, 1vw, 0.95rem); }
+}
+
+@media (max-width: 480px) {
+  .p-img{ height: 200px; }
+  .p{ border-radius: 8px; }
+  .p-title{ font-size: 16px; }
 }

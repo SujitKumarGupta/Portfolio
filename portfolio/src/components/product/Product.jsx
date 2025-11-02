@@ -14,7 +14,6 @@ function Product({ img, link, title, desc }) {
           <img src={img} alt={title} className="p-img" />
           <div className="p-overlay">
             <h3 className="p-title">{title}</h3>
-            <p className="p-desc">{desc}</p>
           </div>
         </div>
       </a>

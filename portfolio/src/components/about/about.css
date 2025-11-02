@@ -43,6 +43,8 @@
 }
 .a-sub{
     margin: 20px 0px;
+    font-size: clamp(1rem, 1.2vw + 0.4rem, 1.25rem);
+    font-weight: 600;
 
 }
 .a-desc{
@@ -62,4 +64,16 @@
     font-weight: bold;
     color: #555;
     margin-bottom: 10px;
+}
+
+/* Responsive About section */
+@media (max-width: 1024px) {
+    .a{ height: auto; padding: 40px 20px; flex-direction: column; gap: 30px; }
+    .a-left, .a-right{ width: 100%; flex: unset; }
+    .a-card{ width: 90%; height: auto; margin: 0 auto; }
+}
+
+@media (max-width: 480px) {
+    .a-card{ border-radius: 16px; }
+    .a-award-img{ width: 90px; height: 90px; }
 }

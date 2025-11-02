@@ -25,3 +25,9 @@
     position: absolute;
     cursor: pointer;
 }
+
+/* Responsive toggle positioning */
+@media (max-width: 480px) {
+    .t{ width: 46px; height: 22px; top: 8px; right: 8px; }
+    .t-button{ width: 18px; height: 18px; }
+}
